@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require_relative './models/link.rb'
+require_relative './models/link'
+require_relative './models/user'
 require 'data_mapper'
 require 'dm-postgres-adapter'
 require_relative 'data_mapper_setup'
@@ -19,6 +20,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/new_user' do
+    p  @user = User.create(:user_name => params[:user_name], :email_address => params[:email_address], :password => params[:password])
     redirect '/links'
   end
 

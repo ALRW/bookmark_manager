@@ -8,9 +8,10 @@ feature "user sign up" do
 		fill_in :user_name, with: 'Andrew'
 		fill_in :email_address, with: 'cool_dude_89@hotmail.com'
 		fill_in :password, with: 'Passw0rd'
-        click_button "create user"
-        within "div.welcome"do 
-        expect(page).to have_content "Welcome Andrew"
+    click_button "create user"
+		expect(User.count).to eq(1)
+    within "div.welcome"do
+      expect(page).to have_content "Welcome Andrew"
     end
-end	
+	end
 end
