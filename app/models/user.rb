@@ -8,6 +8,4 @@ class User
   property :user_name, String
   property :email_address, String
   property :password, String
-
-  # has n, :links, through: Resource
 end

@@ -13,5 +13,6 @@ feature "user sign up" do
     within "div.welcome"do
       expect(page).to have_content "Welcome Andrew"
     end
+		expect(User.last.email_address).to include("cool_dude_89@hotmail.com")
 	end
 end

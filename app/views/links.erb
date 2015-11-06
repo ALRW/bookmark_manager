@@ -10,7 +10,9 @@
     <form action= "/sign_up">
     <input type= "submit" value="sign up" />
     </form>
-    <h1> Welcome </h1>
+    <% if @user %>
+    <h1> <%= "Welcome #{@user.user_name}"%> </h1>
+    <%end%>
   </div>
 
   <div>
