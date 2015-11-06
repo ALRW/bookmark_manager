@@ -10,7 +10,7 @@ feature "user sign up" do
 		fill_in :password, with: 'Passw0rd'
     click_button "create user"
 		expect(User.count).to eq(1)
-    within "div.welcome"do
+    within "body.welcome"do
       expect(page).to have_content "Welcome Andrew"
     end
 		expect(User.last.email_address).to include("cool_dude_89@hotmail.com")

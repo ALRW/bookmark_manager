@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookmark Manager</title>
+  </head>
+  <body class="welcome">
+    <% if current_user %>
+      Welcome <%= current_user.user_name %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
