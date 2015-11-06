@@ -6,7 +6,15 @@
   <link rel="StyleSheet" type="text/css" href="styles/master.css">
 </head>
 <body>
-  <h1> Title </h1>
+  <div class= "welcome">
+    <form action= "/sign_up">
+    <input type= "submit" value="sign up" />
+    </form>
+    <h1> Welcome </h1>
+  </div>
+
+  <div>
+  <h2> Bookmarks </h2>
     <ul id=links>
       <% @links.each do | l | %>
         <li> Title: <%= l.title %>
@@ -20,5 +28,6 @@
     <form action= '/search' method='get'>
       <input type= 'submit' value='Search tags' />
     </form>
+  </div>
 </body>
 </html>

@@ -14,6 +14,14 @@ class BookmarkManager < Sinatra::Base
     erb :links
   end
 
+  get '/sign_up' do
+    erb :sign_up
+  end
+
+  post '/new_user' do
+    redirect '/links'
+  end
+
   get '/links/new' do
     erb :new_link_form
   end
@@ -22,7 +30,7 @@ class BookmarkManager < Sinatra::Base
     link = Link.create(:url => params[:url], :title => params[:title])
     tags = params[:tag]
     tags.split.each do |tag|
-      link.tags << Tag.create(:name => tag)
+    link.tags << Tag.create(:name => tag)
     end
     link.save
     redirect '/links'
